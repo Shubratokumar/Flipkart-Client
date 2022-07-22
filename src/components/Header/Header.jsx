@@ -36,7 +36,7 @@ const Header = () => {
     const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
     
     return (
-        <StyledHeader position="static">
+        <StyledHeader>
             <Toolbar style={{ minHeight: 55 }}>
                 <Component>
                     <img src={logoURL} alt="logo" style={{ width: 75 }} />

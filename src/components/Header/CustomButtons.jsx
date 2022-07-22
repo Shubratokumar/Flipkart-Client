@@ -26,6 +26,11 @@ const LoginButton = styled(Button)`
     box-shadow: none;
     font-weight: 600;
     height: 32px;
+`;
+
+const Text = styled(Typography)`
+    font-weight: 600;
+    padding-left: 3px;
 `
 
 const CustomButtons = () => {
@@ -36,7 +41,7 @@ const CustomButtons = () => {
            <Typography style={{marginTop: 3}}>More</Typography>
            <Container>
                 <ShoppingCartIcon />
-                <Typography>Cart</Typography>
+                <Text >Cart</Text>
            </Container>
         </Wrapper>
     );
