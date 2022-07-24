@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState , useContext} from "react";
 import { authenticateSignup } from './../../service/api';
+import { DataContext } from './../../context/DataProvider';
+
 import {
   Dialog,
   Box,
@@ -93,6 +95,7 @@ const signupInitialValue = {
 const LoginDialog = ({ open, setOpen }) => {
   const [account, toggleAccount] = useState(accountInitialValues.login);
   const [signup, setSignup] = useState(signupInitialValue);
+  const { setAccount } = useContext(DataContext);
 
   const toggleSignup = () => {
     toggleAccount(accountInitialValues.signup);
@@ -115,6 +118,7 @@ const LoginDialog = ({ open, setOpen }) => {
     let response = await authenticateSignup(signup);
     if(!response) return ;
     handleClose();
+    setAccount(signup.firstname)
   }
   return (
     <Dialog

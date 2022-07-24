@@ -1,16 +1,16 @@
 import React, { useState, createContext} from 'react';
 
 
-const DataContext = createContext(null);
+export const DataContext = createContext(null);
 
-const DataProvider = () => {
+const DataProvider = ({children}) => {
     const [account, setAccount] = useState('')
     return (
         <DataContext.Provider value={{
             account,
             setAccount
         }}>
-            
+            {children}
         </DataContext.Provider>
     );
 };
