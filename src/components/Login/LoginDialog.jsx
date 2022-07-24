@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { authenticateSignup } from './../../service/api';
 import {
   Dialog,
   Box,
@@ -110,8 +111,10 @@ const LoginDialog = ({ open, setOpen }) => {
     console.log(signup);
   };
   
-  const signupUser = () =>{
-
+  const signupUser = async() =>{
+    let response = await authenticateSignup(signup);
+    if(!response) return ;
+    handleClose();
   }
   return (
     <Dialog
