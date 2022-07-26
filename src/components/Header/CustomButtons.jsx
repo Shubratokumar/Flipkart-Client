@@ -3,6 +3,7 @@ import { Box, Button, Typography, styled } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginDialog from "./../Login/LoginDialog";
 import { DataContext } from './../../context/DataProvider';
+import Profile from './Profile';
 
 const Wrapper = styled(Box)`
   display: flex;
@@ -39,7 +40,8 @@ const Text = styled(Typography)`
 
 const CustomButtons = () => {
   const [open, setOpen] = useState(false);
-  const { account } = useContext(DataContext);
+  const { account, setAccount } = useContext(DataContext);
+
   const openDialog = () => {
     setOpen(true);
   };
@@ -47,9 +49,7 @@ const CustomButtons = () => {
     <Wrapper>
       {
         account ? 
-          <Typography>
-           {account}
-          </Typography> 
+          <Profile account={account} setAccount={setAccount} ></Profile>
       : 
         <LoginButton variant="contained" onClick={() => openDialog()}>
           Login
