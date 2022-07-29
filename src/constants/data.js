@@ -19,4 +19,10 @@ export const bannerData = [
     { id: 6, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/8d8c292a102363ce.jpg?q=50' },
     { id: 7, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/e21865c16d0c993f.jpg?q=50' },
     { id: 8, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/3f2f7e31a1116d8f.jpeg?q=50' },
-]
+];
+
+export const imageURL = [
+    'https://rukminim1.flixcart.com/flap/960/960/image/2f30db9425df5cec.jpg?q=50',
+    'https://rukminim1.flixcart.com/flap/960/960/image/084789479074d2b2.jpg',
+    'https://rukminim1.flixcart.com/flap/960/960/image/1ce0c4c1fb501b45.jpg?q=50'
+];
