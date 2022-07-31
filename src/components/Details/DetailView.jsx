@@ -10,10 +10,14 @@ const Component = styled(Box)`
     background: #f2f2f2;
     margin-top: 55px;
 `;
-const Container = styled(Grid)`
-    background: #ffffff;
-    display: flex;
-`;
+const Container = styled(Grid)(({ theme })=>({
+    background: '#ffffff',
+    display: 'flex',
+    [theme.breakpoints.down('md')] : {
+        margin: 0
+    }
+}));
+
 const RightComponent = styled(Grid)`
     margin-top: 50px;
 `;
