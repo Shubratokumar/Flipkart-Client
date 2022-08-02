@@ -1,8 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Grid, Box, Typography } from '@mui/material';
+import { Grid, Box, Typography, styled } from '@mui/material';
 import CartItem from './CartItem';
 import TotaLView from './TotaLView';
+
+const Container = styled(Grid)`
+    padding: 30px 135px;
+`;
+
+const Header = styled(Box)`
+    padding: 15px 24px;
+`;
 
 const Cart = () => {
     const { cartItems } = useSelector(state => state.cart);
@@ -10,11 +18,11 @@ const Cart = () => {
         <>
             {
                 cartItems.length ? 
-                    <Grid container>
+                    <Container container>
                         <Grid item lg={9} md={9} sm={12} xs={12}>
-                            <Box>
+                            <Header>
                                 <Typography>My Cart ({cartItems.length})</Typography>
-                            </Box>
+                            </Header>
                             {
                                 cartItems.map(item => (
                                     <CartItem item={item} key={item.id} />
@@ -24,7 +32,7 @@ const Cart = () => {
                         <Grid item lg={3} md={3} sm={12} xs={12}>
                             <TotaLView />
                         </Grid>
-                    </Grid>
+                    </Container>
                 : <div>Empty</div>
             }
         </>
