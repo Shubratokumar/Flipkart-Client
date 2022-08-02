@@ -44,7 +44,7 @@ const DetailView = () => {
                             <ActionItem product={product} key={product.id} />
                         </Grid>
                         <RightComponent item lg={8} md={8} sm={8} xs={12} style={{ paddingLeft: "10px" }}>                            
-                            <ProductDetail product={product}/>
+                            <ProductDetail product={product} key={product.id}/>
                         </RightComponent>
                     </Container>
             }
